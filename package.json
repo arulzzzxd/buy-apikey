@@ -1,0 +1,26 @@
+{
+  "name": "arulzxd-api-premium",
+  "version": "1.0.0",
+  "description": "Sistem Pembayaran QRIS Otomatis & Pembuatan API Key Premium ArulzXD",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "qris",
+    "dana-bisnis",
+    "apikey",
+    "premium"
+  ],
+  "author": "ArulzXD",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
