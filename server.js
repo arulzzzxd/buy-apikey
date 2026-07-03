@@ -9,6 +9,15 @@ app.use(cors()); // Mengizinkan request dari frontend html
 const PORT = 3000;
 const RATE_PER_DAY = 500;
 
+// Tambahkan baris ini agar Express bisa menampilkan file index.html di root
+const path = require('path');
+app.use(express.static(path.join(__dirname)));
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+
 // Database sementara di memori (Ganti dengan MySQL/MongoDB di produksi)
 let databaseOrder = {};
 
