@@ -9,15 +9,6 @@ app.use(cors()); // Mengizinkan request dari frontend html
 const PORT = 3000;
 const RATE_PER_DAY = 1;
 
-// Tambahkan baris ini agar Express bisa menampilkan file index.html di root
-const path = require('path');
-app.use(express.static(path.join(__dirname)));
-
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
-});
-
-
 // Database sementara di memori (Ganti dengan MySQL/MongoDB di produksi)
 let databaseOrder = {};
 
@@ -41,7 +32,7 @@ app.post('/api/create-order', (req, res) => {
         return res.status(400).json({ success: false, message: 'Data tidak lengkap' });
     }
 
-    // Rumus Matematika Tarif Paket: 500 * jumlah hari
+    // Rumus Matematika Tarif Paket: 1 * jumlah hari
     const totalPrice = duration * RATE_PER_DAY;
 
     // Simpan data order sementara dengan status belum dibayar (false)
