@@ -7,7 +7,7 @@ app.use(bodyParser.json());
 app.use(cors()); // Mengizinkan request dari frontend html
 
 const PORT = 3000;
-const RATE_PER_DAY = 500;
+const RATE_PER_DAY = 1;
 
 // Tambahkan baris ini agar Express bisa menampilkan file index.html di root
 const path = require('path');
